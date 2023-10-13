@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(124, 109, 109);
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .container__main{
+            width: 300px;
+            height: 300px;
+        }
+        .bigPic{
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .container__main--option{
+            
+        }
+        .option{
+            width: 50px;
+            height: 60px;
+            border: 2px solid black;
+            opacity: 0.6;
+        }
+        .action{
+            width: 30px;
+            height: 30px;
+            margin-top: 460px;
+            margin-left: 10px;
+            margin-right: 10px;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="action" onclick="back()" src="/Media/z4778468253150_5aa7b6b27cbc4edd4879b2e6bfab9c96.jpg" alt="">
+        <div class="main">
+            <div class="container__main">
+                <img class="bigPic" width="380" height="400" src="/Media/Quảng-cáo-facebook-ads.png" >
+            </div>
+            <div class="container__main--option">
+                <img class="option" src="https://i.ytimg.com/vi/FClS4ni4zfo/maxresdefault.jpg" alt="">
+                <img class="option" src="https://res.klook.com/image/upload/q_85/c_fill,w_750/v1688727845/zhrnmodl0v3wm35oo7b3.jpg"
+                    alt="">
+                <img class="option" src="https://baodienbienphu.com.vn/Uploads/images/uthong85/2021/12/21/dulich39389893893.jpg"
+                    alt="">
+                <img class="option" src="https://vcdn1-dulich.vnecdn.net/2018/01/18/26185406-151130482208844-255370479018180608-n.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=aNZ65vWP4TZVpLiEAJAM4g"
+                    alt="">
+                <img class="option" src="https://znews-photo.zingcdn.me/w660/Uploaded/lerl/2018_10_05/DSC_7800.jpg" alt="">
+                <img class="option" src="https://img.thuthuattinhoc.vn/uploads/2019/04/10/nhung-hinh-anh-dep-ve-ha-noi_112848268.jpg"
+                    alt="">
+                <img class="option" src="https://img.thuthuatphanmem.vn/uploads/2018/09/26/anh-ve-dep-ha-noi-sang-som-dong_053443626.jpg"
+                    alt="">
+            </div>
+        </div>
+        <img class="action" onclick="next()" src="/Media/z4778468253095_b8e525a3bbbe964c4d6fa3188e68d437.jpg" alt="">
+    </div>
+    <script>
+        let arrOption=document.getElementsByClassName("option");
+        console.log(arrOption);
+        let count=0;
+        function back() {
+       count--;
+
+        if (count==-1) {
+            count=arrOption.length-1;
+        } 
+       document.getElementsByClassName("bigPic")[0].src=document.getElementsByClassName("option")[count].src;
+    document.getElementsByClassName("option")[count].style.opacity="1";
+       }
+       function next() {
+        count++;
+        if (count==arrOption.length) {
+            count=0;
+        }
+        document.getElementsByClassName("bigPic")[0].src=document.getElementsByClassName("option")[count].src;
+        document.getElementsByClassName("option")[count].style.opacity="1";
+
+       
+
+       }
+    </script>
+</body>
+
+</html>
